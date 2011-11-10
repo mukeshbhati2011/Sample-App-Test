@@ -2,8 +2,14 @@ require 'spec_helper'
 
 describe PagesController do
 
-	# Test Views also
+  # Test Views also
   render_views
+  
+  # Common Varible across each test as it is executed everytime before a test
+  before(:each) do
+	@baseTitle = "Ruby on Rails Tutorial Sample App |"
+  end
+  
   
   describe "GET 'home'" do
     it "should be successful" do
@@ -14,8 +20,7 @@ describe PagesController do
 	it "should have the right title" do
 		get 'home'
 		response.should have_selector("title",
-						:content =>
-							"Ruby on Rails Tutorial Sample App | Home")
+						:content =>	@baseTitle + " Home")
 	end
 	
   end
@@ -29,8 +34,7 @@ describe PagesController do
 	it "should have the right title" do
       get 'contact'
       response.should have_selector("title",
-                        :content =>
-                          "Ruby on Rails Tutorial Sample App | Contact")
+                        :content => @baseTitle + " Contact")
     end
 
   end
@@ -44,9 +48,23 @@ describe PagesController do
 	it "should have the right title" do
       get 'about'
       response.should have_selector("title",
-                        :content =>
-                          "Ruby on Rails Tutorial Sample App | About")
+                        :content => @baseTitle + " About")
     end
 
+  end	
+  
+  # Test case for the Help Action.
+  describe "GET 'help'" do
+	it "should be successful" do
+		get 'help'
+		response.should be_success
+	end
+	
+	it "should have the right title" do
+		get 'help'
+		response.should have_selector("title",
+						:content => @baseTitle + " Help")
+	end
+	
   end	
 end
