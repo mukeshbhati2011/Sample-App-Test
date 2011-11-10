@@ -7,7 +7,7 @@ describe PagesController do
   
   # Common Varible across each test as it is executed everytime before a test
   before(:each) do
-	@baseTitle = "Ruby on Rails Tutorial Sample App |"
+	@baseTitle = "Ruby on Rails Tutorial Sample App"
   end
   
   
@@ -20,7 +20,7 @@ describe PagesController do
 	it "should have the right title" do
 		get 'home'
 		response.should have_selector("title",
-						:content =>	@baseTitle + " Home")
+						:content =>	@baseTitle + " | Home")
 	end
 	
   end
@@ -34,7 +34,7 @@ describe PagesController do
 	it "should have the right title" do
       get 'contact'
       response.should have_selector("title",
-                        :content => @baseTitle + " Contact")
+                        :content => @baseTitle + " | Contact")
     end
 
   end
@@ -48,7 +48,7 @@ describe PagesController do
 	it "should have the right title" do
       get 'about'
       response.should have_selector("title",
-                        :content => @baseTitle + " About")
+                        :content => @baseTitle + " | About")
     end
 
   end	
@@ -63,7 +63,7 @@ describe PagesController do
 	it "should have the right title" do
 		get 'help'
 		response.should have_selector("title",
-						:content => @baseTitle + " Help")
+						:content => @baseTitle + " | Help")
 	end
 	
   end	
