@@ -14,6 +14,7 @@ end
 group :test do
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
+  gem 'annotate', '2.4.0'
   #gem 'autotest', '4.4.6'
   #gem 'autotest-rails-pure', '4.1.2'
   #gem 'autotest-fsevent', '0.2.4'

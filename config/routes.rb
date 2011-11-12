@@ -1,5 +1,7 @@
 SampleAppTest::Application.routes.draw do
-  get "users/new"
+  # Rails way of defining Data
+  resources :users
+  
 
   #get "pages/home"
 
